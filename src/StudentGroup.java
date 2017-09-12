@@ -27,18 +27,15 @@ public class StudentGroup implements StudentArrayOperation throws IllegalArgumen
 	public Student[] getStudents() {
 		// Add your implementation here
 		if(students == NULL)
-			throw IllegalArgumentException
+			throw IllegalArgumentException;
 		else
 			return students;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
-		Scanner in = new Scanner(System.in);
-		int index = in.nextInt();
-		int length = student.length;
-		if(index < 0 || index >= students.length)
-			throw IllegalArgumentException
+		if(students == NULL)
+			throw IllegalArgumentException;
 		
 		// Add your implementation here
 	}
@@ -47,7 +44,7 @@ public class StudentGroup implements StudentArrayOperation throws IllegalArgumen
 	public Student getStudent(int index) {
 		// Add your implementation here
 		//int length = students.length;
-		if(index < 0 || student == NULL || index >= students.length)
+		if(index < 0 || index >= students.length)
 			throw IllegalArgumentException;
 		return students[index];
 	}
@@ -63,6 +60,8 @@ public class StudentGroup implements StudentArrayOperation throws IllegalArgumen
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+		if(student == NULL)
+			throw IllegalArgumentException;
 		int length = students.length, i;
 		Student temp = new Student[length+1];
 		for(i = 0; i < students.length; i++) {
@@ -75,6 +74,8 @@ public class StudentGroup implements StudentArrayOperation throws IllegalArgumen
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+		if(student == NULL)
+			throw IllegalArgumentException;
 		int length = students.length, i;
 		Student temp = new Student[length+1];
 		for(i = 0; i < students.length; i++) {
@@ -103,7 +104,7 @@ public class StudentGroup implements StudentArrayOperation throws IllegalArgumen
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
-		if(index < 0 || student == NULL || index >= students.length)
+		if(index < 0 || index >= students.length)
 			throw IllegalArgumentException;
 		Student[] temp = new Student[students.length-1];
 		int i;
